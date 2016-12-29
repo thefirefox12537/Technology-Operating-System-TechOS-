@@ -769,7 +769,7 @@ db 'majene', 0
 db 'denpasar', 0
 db 'badung', 0
 db 'bangli', 0
-db 'sungaraja', 0
+db 'singaraja', 0
 db 'jembrana', 0
 db 'klungkung', 0
 db 'nusa dua', 0
