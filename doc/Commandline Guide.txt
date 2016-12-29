@@ -1,0 +1,61 @@
++-------------------+
+| Commandline Guide |
++-------------------+
+
+While many of the programs in TechOS are avaliable through the menu interface, some are commandline
+only or can accept parameters through the commandline.
+
+Below is a list of all the commands that can be run throught the TechOS commandline shell. Commands
+marked as "Built-in" are provided by the shell itself and the rest are external BASIC or binary
+programs.
+
+Additional help is avaliable for some commands by typing "(command) help".
+
+Command		Description				Parameters				Part Of
+------------------------------------------------------------------------------------------------------------
+AAPCONV		Upconverts an old style AAP file	1:filename				ASCII Artist
+ARCHIVE		Creates file archives			1:cmd 2:archive-file [3:filelist]	Mega Archiver
+ASM		Assembler				1:input-file 2:output-file		Asm4mo
+BANTUAN		Displays a list of avaliable commands	(none)					Built-in
+BASIC		Interactive BASIC Interpreter		[1:command]				Interactive Interpreter
+BFM		DOS-like file manager			(none)					BlackSVK File Manager
+CALC		Menu-based Calculator			(none)					Calculator
+CF		Space Flight Game			(none)					Cosmic Flight
+DIREKTORI	Lists files on the disk			(none)					Built-in
+DISPLAY		Displays AAP picture files		1:filename				ASCII Artist
+DRAW		An advanced text artwork program	[1:filename]				ASCII Artist
+ENCRYPT		File encryption program			(none)					Commandline Tools
+FISHER		Simple fisherman game			(none)					Deep Sea Fisher
+FORTH		IBM-PC BASIC like programs		(none)					Forth
+GETBYTES	Command line memory viewer		[1:flags] 2:start 3:end			Command line Tools
+GREP		File search utility			1:filename 2:string			Command line Tools
+HANGMAN		Simple hangman game with cities name	(none)					TechOS Hangman
+HAPUS		Deletes a file				1:filename				Built-in
+HEAD		Display the start of a file		1:filename [2:lines]			Command line Utilities
+ITC		Plain text compression program		1:command 2:in-file [3:out-file]	Text Compression
+KELUAR		Exits the commandline shell		(none)					Built-in
+KEYBOARD	Simple keyboard game playing piano	(none)					TechOS Keyboard
+LAYAR		Clears the screen			(none)					Built-in
+LIHAT		Concatenates a file			1:filename				Built-in
+MATIKAN		Shuting down the system with CLI	(none)					Built-in
+MEMEDIT		2-column TUI Memory Editor		[1:filename]				Memory Manipulator
+MONITOR		System monitor				(none)					TechOS Utilities
+MUNCHER		Pathfinding game			(none)					Muncher
+NEWPASS		Changes the startup password		(none)					Password Protection
+PATTERN		Pattern generator			(none)					Visualiser
+PLAY		Plays a tune edit (SND) file		1:filename				Tune Editor
+REBOOT		Rebooting the system with CLI		(none)					Built-in
+SALIN		Copies a file				1:source-file 2:destination-file	Built-in
+SERIAL		Serial communication program		(none)					TechOS Utilities
+SUDOKU		Sudoku puzzle game			(none)					TechOS Sudoku
+TAIL		Displays the end of files		1:filename [2:lines]			Command line Utilities
+TANGGAL		Displays the current data		(none)					Built-in
+TECHTRON	Worm-like game				(none)					TechTron
+TUNEEDIT	PC speaker sound making tool		[1:filename]				Tune Editor
+UBAH		Changes the name of a file		1:old-filename 2:new-filename		Built-in
+UKURAN		Finds the size of a file		1:filename				Built-in
+VERSI		Displays the OS version			(none)					Built-in
+VIEWER		Displays the sample PCX, BAS, TXT file	(none)					TechOS File Viewer
+WAKTU		Displays the current time		(none)					Built-in
+YOTTA		Nano-like text editor			[1:filename]				Yotta Text Editor
+ 

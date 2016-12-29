@@ -1,0 +1,22 @@
+
+; Version numbers and names
+%DEFINE OS_NAME_SHORT			'TechOS'
+%DEFINE OS_NAME_LONG			'Technology Operating System'
+%DEFINE OS_VERSION_NUMBER		11
+%DEFINE OS_VERSION_STRING		'0.11'
+
+; Filenames to search for
+%DEFINE OS_KERNEL_FILENAME		'KERNEL.BIN'
+%DEFINE OS_KERNEL_EXT_FILENAME		'TECHOS.BIN'
+%DEFINE OS_MENU_DATA_FILE		'MENU.TXT'
+%DEFINE OS_BACKGROUND_FILE		'BACKGRND.AAP'
+%DEFINE OS_AUTORUN_BIN_FILE		'AUTORUN.BIN'
+%DEFINE OS_AUTORUN_BAS_FILE		'AUTORUN.BAS'
+%DEFINE OS_MISSING_FILE_MSG		'Berkas penting sistem operasi hilang: '
+
+%DEFINE OS_BOOT_MSG			OS_NAME_LONG, '(R) Versi ', OS_VERSION_STRING
+%DEFINE OS_TUI_TOP			'Selamat datang di ', OS_NAME_SHORT, ' Desktop'			
+%DEFINE OS_TUI_BOTTOM			'Versi ', OS_VERSION_STRING
+
+; Time to wait, before entering the starting the shell (to view messages)
+%define BOOT_DELAY 50

@@ -1,0 +1,119 @@
+{T0
+Menu Utama
+=NULL
+}
+
+{L0
+Pengelola Berkas
+Penampil Berkas
+Editor Teks
+Editor Gambar
+Editor Suara
+Forth
+Shell BASIC
+Shell Peintah baris
+Hiburan >
+Utilitas >
+Semua Program >
+
+Mulai Ulang
+Matikan
+}
+
+{A0
+*BFM.BIN
+*VIEWER.BIN
+*YOTTA.BIN
+*DRAW.BAS
+*TUNEEDIT.BIN
+*FORTH.BIN
+*BASIC.BAS
+=CMDLINE
+>1
+>2
+=FILELIST
+=NULL
+=REBOOT
+=SHUTDOWN
+}
+
+{I0
+128
+128
+128
+128
+133
+128
+131
+131
+129
+129
+129
+32
+132
+132
+}
+
+{T1
+Menu Hiburan
+>0
+}
+
+{L1
+Deep Sea Fisher
+Hangman
+Keyboard
+Muncher
+Cosmic Flight
+TechTron
+Sudoku
+}
+
+{A1
+*FISHER.BIN
+*HANGMAN.BIN
+*KEYBOARD.BIN
+*MUNCHER.BAS
+*CF.BAS
+*TECHTRON.BAS
+*SUDOKU.BAS
+}
+
+{I1
+128
+128
+128
+128
+128
+128
+128
+}
+
+{T2
+Menu Utilitas
+>0
+}
+
+{L2
+Kalkulator
+System Monitor
+Setel Kata sandi
+Editor Memori
+Mouse API Test
+}
+
+{A2
+*CALC.BAS
+*MONITOR.BIN
+*NEWPASS.BAS
+*MEMEDIT.BAS
+*MOUSE.BIN
+}
+
+{I2
+134
+134
+134
+134
+134
+}

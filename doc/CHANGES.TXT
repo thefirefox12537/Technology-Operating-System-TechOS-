@@ -1,0 +1,46 @@
+=============================================================================
+TechOS - A small 16-bit x86 operating system.
+Copyright (C) 2016 TechOS Developers, uses GPL licence see doc/LICENCE.TXT
+Copyright (C) 2016 The Firefox Foundation.  All rights reserved.
+
+Copyright (C) 2013 TachyonOS Developers -- see doc/TachyonOS/LICENCE.TXT
+Copyright (C) 2006 - 2012 MikeOS Developers -- see doc/MikeOS/LICENSE.TXT
+=============================================================================
+
+------------------------
+Version 0.11 (20 December 2016)
+------------------------
+* New UI Shell 
+	* Main OS Menu.
+	* File context menus.
+	* File list now under 'All Programs'
+	* Added APM restart and shutdown.
+	* Allows for centralised colour schemes
+* New UI theme
+* Added Custom backgrounds functionality
+* Replaced MikeOS Text Editor with Yotta Text Editor
+* Replaced MikeOS File Manager with BlackSVK File Manager
+* Many more programs added
+* Several new BASIC commands
+* Fixed many bugs in disk API.
+* Updated Yotta to 1.03x10^25
+* Updated Memory Manipulator to 3.2.0
+* Updated ASCII Artist to 3.1.0
+* Updated BASIC++ Library to 4.1.0
+* Updated Calculator to 2.1.0
+* Shutdown and Reboot has been added in Main Menu
+* Interface and Program modified to Indonesian
+* Added TECHOSK.SYS as secondary kernel
+
+
+---------------------------
+Version 0.1b (19 December 2016)
+---------------------------
+* Shutdown 'MATIKAN' and Reboot 'REBOOT' command has been added in CLI
+
+
+--------------------------
+Version 0.1a (17 December 2016) 
+--------------------------
+* Changes from MikeOS 4.5
+

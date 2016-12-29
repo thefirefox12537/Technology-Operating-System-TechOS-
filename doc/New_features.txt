@@ -1,0 +1,8 @@
+New Features
+============
+
+
+1. Shutdown and Reboot on CLI availabled
+2. Modified the program .BIN or .BAS
+3. Fisher, Keyboard, Forth, Viewer, added
+4. More functionally
