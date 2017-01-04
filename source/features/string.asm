@@ -1054,3 +1054,15 @@ os_string_tokenize:
 
 ; ==================================================================
 
+; ------------------------------------------------------------------
+; os_memory_copy -- Copy data from memory pointed by BX to memory pointed by AX. Data count is CX
+; IN: AX = data destination, BX = data source, CX = count
+os_memory_copy:
+   pusha
+   mov di, ax
+   mov si, bx
+   cld
+   rep movsb
+   popa
+   ret
+
