@@ -125,7 +125,7 @@ main_loop:
 	helpmsg1	db 'TechoOS Machine Code Monitor', 10, 13, 0
 	helpmsg2	db ' ', 10, 13, 0
 	helpmsg3	db '(Lihat User Handbook untuk panduan langsung)', 13, 10, 13, 10, 0
-	helpmsg4	db 'Masukkan instruktsi di hex, mengakhiri dengan $ karakter', 10, 13, 0
+	helpmsg4	db 'Masukkan instruktsi pada hex, mengakhiri dengan karakter $', 10, 13, 0
 	helpmsg5	db 'Perintah: r = jalankan ulang kode sebelumnya, x = keluar', 10, 13, 0
 
 	prompt		db '= ', 0

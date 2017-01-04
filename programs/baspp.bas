@@ -5,7 +5,7 @@ REM Email: reinmclaren33@gmail.com
 REM Lisensi dibawah GNU General Public Licence revision 3.
 REM Memperlukan TechOS versi 0.1 atau paling baru.
 
-REM Wiki: https://github.com/ZeroKelvinKeyboard/MikeOS-Apps/wiki/mbppdoc
+REM Wiki: https://github.com/thefirefox12537/MikeOS-Apps/wiki/mbppdoc
 
 PRINT "Pustaka BASIC++ versi 4.1.0"
 END

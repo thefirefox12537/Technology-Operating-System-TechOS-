@@ -153,13 +153,13 @@ future_version:
 data:
 	by_text					db '" oleh ', 0
 	exit_text				db 'EXIT', 0
-	exit_message				db 'Berkas suara komplit.', 0
+	exit_message				db 'Berkas suara selesai.', 0
 	input_file_msg 				db 'Masukkan nama berkas atau "EXIT" untuk membatalkan', 0
-	input_file_prompt			db 'Berkas suara> ', 0
+	input_file_prompt			db 'Berkas suara:# ', 0
 	err_no_file				db 'Anda harus sesuaikan nada untuk memainkan (commandline).', 0
-	err_file_not_found			db 'Berkas tidak dapat dimuat', 0
-	err_invalid_file			db 'Kesalahan: Berkas tidak mendukung', 0
-	err_invalid_version			db 'Kesalahan: Nomor versi tidak sah', 0
+	err_file_not_found			db 'Berkas tidak dapat dimuat.', 0
+	err_invalid_file			db 'Kesalahan: Berkas tidak mendukung.', 0
+	err_invalid_version			db 'Kesalahan: Nomor versi tidak sah.', 0
 	err_future_version			db 'Kesalahan: Nomor versi harus tinggi daripada dukungan program ini.', 0
 	err_future_version2			db 'Anda perlu memperbarui program anda untuk mendukung versi ini.', 0
 	now_playing_text			db 'Sekarang main: "', 0

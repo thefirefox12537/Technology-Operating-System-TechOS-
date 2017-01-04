@@ -299,7 +299,7 @@ out_of_range:
 
 	jmp mainloop
 
-	err_out_of_range					db "Location out of range!", 0
+	err_out_of_range					db "Lokasi diluar batas!", 0
 
 ;==================
 ; ENTER COMMAND (E)
@@ -683,20 +683,20 @@ cmd_help:
 
 	help_string				db "Perintah tersedia:", 13, 10
 	help_string2				db "===================", 13, 10
-	help_string3				db "?                      presents this help", 13, 10
-	help_string4				db "a [string]             sets the author of the tune", 13, 10
-	help_string5				db "b [string]             sets the title of the tune", 13, 10
-	help_string6				db "c                      clear all data", 13, 10
-	help_string7				db "d [loc] [num]          displays the stored value of tones", 13, 10
-	help_string8				db "e [loc]                prompts to enter tones at location (as >[freq] [length])", 13, 10
-	help_string9				db "l [num]                sets the length of the tune in tones", 13, 10
-	help_string10				db "m [loc1] [loc2] [num]  copies data from one location to another", 13, 10
-	help_string11				db "n [string]             sets the name of the file", 13, 10
-	help_string12				db "o                      loads a file", 13, 10
-	help_string13				db "p [loc] [num]          plays number of tones from location", 13, 10
-	help_string14				db "q                      quit the program", 13, 10
-	help_string15				db "s                      saves a file", 13, 10
-	help_string16				db "t [freq] [len]         plays a specific tone", 0
+	help_string3				db "?                      menyediakan bantuan ini", 13, 10
+	help_string4				db "a [string]             setel pemilik pada nada", 13, 10
+	help_string5				db "b [string]             setel judul pada nada", 13, 10
+	help_string6				db "c                      menghapus semua data", 13, 10
+	help_string7				db "d [loc] [num]          menampilkan nilai nada yang tersimpan", 13, 10
+	help_string8				db "e [loc]                prompts to enter tones at location (as #[freq] [length])", 13, 10
+	help_string9				db "l [num]                setel kepanjangan pada nada di nada", 13, 10
+	help_string10				db "m [loc1] [loc2] [num]  salin data dari satu lokasi ke lain", 13, 10
+	help_string11				db "n [string]             setel nama pada berkas", 13, 10
+	help_string12				db "o                      muat berkas", 13, 10
+	help_string13				db "p [loc] [num]          mainkan angka nada dari lokasi", 13, 10
+	help_string14				db "q                      keluar program", 13, 10
+	help_string15				db "s                      simpan berkas", 13, 10
+	help_string16				db "t [freq] [len]         mainkan nada yang sesuai", 0
 
 
 cmd_unknown:

@@ -186,10 +186,10 @@ erase_sub:
 	ret
 
 
-	warnmsg_1	db 'Serial terminal program - sedang mengunci', 0
+	warnmsg_1	db 'Serial terminal program - dikunci', 0
 	warnmsg_2	db 'jika tidak punya port serial! Teruskan?', 0
 
-	start_msg	db 'TechOS minicom -- Tekan F8 untuk keluar', 13, 10, 'Menghubungkan via serial di 9600 baud...', 13, 10, 13, 10, 0
+	start_msg	db 'TechOS minicom -- Tekan F8 untuk keluar', 13, 10, 'Menghubungkan via serial pada 9600 baud...', 13, 10, 13, 10, 0
 	finish_msg	db 13, 10, 13, 10, 'Mengeluarkan TechOS minicom; tekan sembarang untuk kembali ke TechOS', 13, 10, 0
 
 

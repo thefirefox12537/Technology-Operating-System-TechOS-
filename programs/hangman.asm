@@ -539,14 +539,14 @@ show_hangman:
 	title_msg	db 'TechOS Hangman', 0
 	footer_msg	db 'Tekan Esc untuk keluar', 0
 
-	hint_msg_1	db 'Kata pendek kali ini, anda peroleh', 0
-	hint_msg_2	db 'huruf pertama secara bebas!', 0
+	hint_msg_1	db 'Kata pendek kali ini, anda peroleh huruf', 0
+	hint_msg_2	db 'pertama secara bebas!', 0
 
-	help_msg_1	db 'Bisa anda duga nama kota dan', 0
+	help_msg_1	db 'Bisa anda tebak nama kota dan', 0
 	help_msg_2	db 'kabupaten itu di Indonesia yang', 0
 	help_msg_3	db 'cocok pada tempat dibawah ini?', 0
-	help_msg_4	db 'Tekan tombol untuk menduga huruf,', 0
-	help_msg_5	db 'tapi hanya diberi 10 kesempatan', 0
+	help_msg_4	db 'Tekan tombol untuk menebak huruf,', 0
+	help_msg_5	db 'tapi hanya diberi 10 kesempatan!', 0
 
 	real_string	times 50 db 0
 	work_string	times 50 db 0
@@ -692,7 +692,7 @@ db 'agam', 0
 db 'padang pariaman', 0
 db 'pulau mentawai', 0
 db 'padangpanjang', 0
-db 'danau singkarak', 0
+db 'singkarak', 0
 db 'sawahlunto', 0
 db 'solok', 0
 db 'payakumbuh', 0

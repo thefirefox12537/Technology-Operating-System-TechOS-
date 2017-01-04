@@ -527,7 +527,7 @@ hkmsg   db 'Kail Tersisa:',0
 
 gomsg   db 'Log Tangkap',0
 head1   db '       Pasar    Angka ',0
-head2   db 'Ikan   Nilai    Dtngkp   Skor ',0
+head2   db 'Ikan   Nilai    Ditangkap Skor',0
 
         ;line length (including 0), Message, 0
 intro:  db 16,'Deep Sea Fisher',0
