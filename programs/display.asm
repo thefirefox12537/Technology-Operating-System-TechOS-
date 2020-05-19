@@ -168,8 +168,8 @@ help:
 	help_word				db "BANTUAN", 0
 	help_string				db "DISPLAY - Menampilkan berkas gambar AAP", 13, 10
 	help_string2				db "Sintaks: DISPLAY (nama berkas)", 13, 10
-	help_string3				db "Copyright (C) 2016 The Firefox Foundation", 13, 10
-	help_string4				db "Email: reinmclaren33@gmail.com", 13, 10
+	help_string3				db "Copyright (C) Joshua Beck 2012", 13, 10
+	help_string4				db "Email: mikeosdeveloper@gmail.com", 13, 10
 	help_string5				db "Lisensi dibawah GNU General Public Licence", 13, 10
 	help_string6				db 13, 10, 0
 	

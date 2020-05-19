@@ -2,6 +2,18 @@
 org 32768
 bits 16
 
+call os_mouse_exists
+jnc okay
+ret
+
+%macro debug 1
+	push ax
+	mov al, %1
+	out 0xE9, al
+	pop ax
+%endmacro
+
+okay:
 ; clear screen beforehand
 call os_clear_screen
 call os_hide_cursor
@@ -82,4 +94,4 @@ exit:
 	
 mouse_x_string				db 'Mouse X:   ', 0
 mouse_y_string				db 'Mouse Y:   ', 0
-exit_msg				db 'Tekan tombol escape atau klik sembarang tombol mouse untuk keluar.', 0
+exit_msg				db 'Tekan tombol esc atau klik sembarang tombol mouse untuk keluar.', 0

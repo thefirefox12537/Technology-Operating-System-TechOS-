@@ -1,5 +1,5 @@
 ; ------------------------------------------------------------------
-; Minicom-like program for TechOS
+; Minicom-like program for MikeOS
 ; ------------------------------------------------------------------
 
 
@@ -21,7 +21,7 @@
 
 	BITS 16
 
-	%INCLUDE "techdev.inc"
+	%INCLUDE "techos.inc"
 	ORG 32768
 
 
@@ -184,6 +184,7 @@ erase_sub:
 	call os_move_cursor
 
 	ret
+
 
 
 	warnmsg_1	db 'Serial terminal program - dikunci', 0

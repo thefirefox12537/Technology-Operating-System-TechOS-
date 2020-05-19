@@ -7,7 +7,7 @@
 
 
 	BITS 16
-	%INCLUDE "techdev.inc"
+	%INCLUDE "techos.inc"
 	ORG 32768
 
 
@@ -29,9 +29,6 @@
 
 main_loop:
 	mov si, helpmsg4
-	call os_print_string
-
-	mov si, helpmsg5
 	call os_print_string
 
 .noinput:

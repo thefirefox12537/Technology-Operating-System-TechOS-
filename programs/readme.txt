@@ -1,4 +1,4 @@
-Selamat datang di TechOS versi 0.11
+Selamat datang di TechOS versi 0.12
 ===================================
 
 
@@ -16,10 +16,10 @@ Saya berterima kasih atas MikeOS dan TachyonOS telah menyumbangkan kode dengan
 bermaksud untuk saya ubahkan ke dalam bahasa Indonesia, termasuk program
 aplikasi BIN dan BAS (namun tidak banyak).
 
-Akhirnya saya bisa merevisi TechOS, tetapi masih rilisan pengembangan alpha
-dengan kode versi 0.11.
+Akhirnya setelah 3 tahun saya bisa merevisi TechOS dalam pengembangan beta dengan
+kode versi 0.12.
 
-Apa yang baru tentang TechOS 0.11:
+Apa yang baru tentang TechOS 0.12:
 
 1.  Mendukung USB, Mouse, beberapa input.
 2.  Menu sudah multitasking layaknya menu di sistem operasi lainnya.
@@ -30,13 +30,13 @@ Apa yang baru tentang TechOS 0.11:
 6.  Tersedianya background.
 7.  File Manager diganti oleh BlackSVK File Manager.
 8.  Editor diganti oleh Yotta Text Editor.
-9.  Masih banyak bug yang tidak bisa mengoperasikan menu all program,
-    File Manager, File Viewer; Melakukan password dan membuat
+9.  Beberapa bug telah diperbaiki antara lain: menu All programs, File Viewer
+10. Masih ada bug yang belum diperbaiki seperti melakukan password dan membuat
     berkas.
 
 
 
-Surabaya, 20 Desember 2016
+Surabaya, 19 Mei 2020
 
 Salam,
 Faizal Hamzah
@@ -48,8 +48,7 @@ Pemilik The Firefox Foundation.
 
 
 
-Facebook:  firefox.faizalhamzah20@facebook.com
-           https://www.facebook.com/Firefox.FaizalHamzah20/
-           (Faizal Hamzah)
-Instagram: @firefox_2537
+Facebook:  https://fb.me/thefirefox12537/
+           https://fb.me/thefirefoxfoundation/
+Instagram: @thefirefox12537
 E-mail:    reinmclaren33@gmail.com

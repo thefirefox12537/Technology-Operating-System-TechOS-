@@ -3,14 +3,14 @@ org 32768
 %include 'techdev.inc'
 
 ; Key code values with BIOS (using scan code set 1)
-%define UP_KEYCODE		0x48E0
+%define UP_KEYCODE			0x48E0
 %define DOWN_KEYCODE		0x50E0
 %define LEFT_KEYCODE		0x4BE0
 %define RIGHT_KEYCODE		0x4DE0
 %define INSERT_KEYCODE		0x52E0
 %define DELETE_KEYCODE		0x53E0
 %define HOME_KEYCODE		0x47E0
-%define END_KEYCODE		0x4FE0
+%define END_KEYCODE			0x4FE0
 %define PAGEUP_KEYCODE		0x49E0
 %define PAGEDOWN_KEYCODE	0x51E0
 
@@ -134,8 +134,8 @@ crash:
 	call os_print_string
 	ret
 	
-	crash_msg			db "Editor sudah rusak :(", 13, 10
-	db 'Anda dapat melapor bug ini dengan menaruh laporan bug di email:'
+	crash_msg			db "Yotta sudah rusak :(", 13, 10
+	db 'Anda dapat melapor bug ini dengan menaruh laporan bug di forum MikeOS atau email:'
 	db 13, 10, 'reinmclaren33@gmail.com', 13, 10, 0
 
 ; A whole heap of commands that make up the command section. Can be called by
@@ -307,7 +307,7 @@ draw_cmd:
 	        			db	'^U Tempel    ', 0
 	        			db	'^J Salin     ', 0
 	
-	name_and_version		db 	'Editor Teks Yotta  1.03x10^25', 0
+	name_and_version		db 	'Yotta 1.03x10^25', 0
 	
 set_filename:
 	; IN: p1 = filename (blank for none)
@@ -347,7 +347,7 @@ set_filename:
 		call os_print_string
 		ret
 		
-	no_file_word			db	'Buffer Baru', 0
+	no_file_word			db	'Buffer Bru', 0
 	file_word			db	'Brks: ', 0		
 
 set_caption:
@@ -434,6 +434,7 @@ input_caption:
 	
 	call os_show_cursor
 	mov word ax, [p2]
+	mov bx, 60
 	call os_input_string
 	call os_hide_cursor
 	
@@ -457,7 +458,7 @@ set_basic_parameters:
 	ret
 
 ask_caption:
-	; IN: p1 = prompt, p2 = answer (Y/T/B = 0/1/2)
+	; IN: p1 = prompt, p2 = answer (Y/N/C = 0/1/2)
 	mov dh, 22
 	mov dl, 0
 	call os_move_cursor
@@ -628,7 +629,7 @@ set_modified:
 		call os_print_string
 		ret
 	
-	modified_word				db 'Diubah', 0
+	modified_word				db 'Terubah', 0
 	blank_word				db '        ', 0
 	
 clear_text_area:
@@ -789,9 +790,9 @@ next_screen_delay:
 	ret
 
 help_text_1:
-  db 'Editor Teks Yotta: klon nano untuk TechOS', 13, 10
+  db 'Yotta: klon nano utk TechOS', 13, 10
   db 'Versi 1.03x10^25', 13, 10
-  db 'Copyright (C) 2016 The Firefox Foundation', 13, 10
+  db 'Copyright (C) Joshua Beck 2015', 13, 10
   db 'Lisensi dibawah GNU GPL v3', 13, 10
   db 'Email: reinmclaren33@gmail.com', 13, 10
   db 13, 10

@@ -24,8 +24,8 @@ start:
 	jmp process_parameters
 
 	.welcome_msg					db 'TUNEEDIT - Editor Suara Commandline untuk TechOS', 13, 10
-	.welcome_msg2					db 'Dibuat oleh Faizal Hamzah', 13, 10
-	.welcome_msg3					db 'Versi 1.0.1', 13, 10
+	.welcome_msg2					db 'Created by Joshua Beck', 13, 10
+	.welcome_msg3					db 'Version 1.0.1', 13, 10
 	.welcome_msg4					db 'Lisensi dibawah GNU General Public Licence v3', 13, 10
 	.welcome_msg5					db "Tekan '?' untuk bantuan", 0
 
@@ -299,7 +299,7 @@ out_of_range:
 
 	jmp mainloop
 
-	err_out_of_range					db "Lokasi diluar batas!", 0
+	err_out_of_range					db "Lokasi di luar jangkauan!", 0
 
 ;==================
 ; ENTER COMMAND (E)
