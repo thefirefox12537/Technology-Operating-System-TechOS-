@@ -1,4 +1,4 @@
-rem Editor Teks Yotta
+rem Yotta Text Editor
 goto start
 
 apicall:
@@ -239,7 +239,7 @@ exit_okay:
 
 unsaved:
   if p = 0 then return
-  $3 = "Simpan buffer yang diubah (JAWAB 'T' DIHANCURKAN)? "
+  $3 = "Simpan buffer termodifikasi (Tkn 'T' akan mnghncurkn prubahan) ? "
   gosub question
   w = v
   if w = 0 then gosub save_current
@@ -286,9 +286,9 @@ loadfile:
   gosub set_range
   gosub redraw
 
-  if m = 1 then $3 = "Baca 1 baris"
-  if m > 1 then $3 = "Baca " + m + " baris"
-  if s = 0 then $3 = "Baca 0 baris"
+  if m = 1 then $3 = "Terbaca 1 baris"
+  if m > 1 then $3 = "Terbaca " + m + " baris"
+  if s = 0 then $3 = "Terbaca 0 baris"
   gosub set_caption
 return
 
@@ -316,7 +316,7 @@ newfile:
 
   gosub set_range
   gosub redraw
-  $3 = "Berkas baru"
+  $3 = "Berkas Baru"
   gosub set_caption
 return
 
@@ -449,7 +449,7 @@ curpos:
   x = l + 1
   y = h - g
   v = e - g
-  $3 = "brs " + n + "/" + m + ", kol " + w + "/" + x + ", char " + y + "/" + v
+  $3 = "Brs " + n + "/" + m + ", Klm " + w + "/" + x + ", Krkt " + y + "/" + v
   gosub set_caption
 return
 
@@ -587,7 +587,7 @@ copytext:
   string set $5 w v
 
   w = w - 1
-  $3 = "" + w + " karakter yang ditambahkan ke baris buffer"
+  $3 = "" + w + " karakter ditambahkan ke baris buffer"
   gosub set_caption
 return
 
@@ -611,7 +611,7 @@ paste:
     x = x + 1
   next w
 
-  $3 = "Tempel baris buffer ke berkas"
+  $3 = "Baris buffer yang disisipkan ke berkas"
   gosub set_caption
   gosub render_text
 return
@@ -620,7 +620,7 @@ readfile:
   gosub unsaved
   if w = 2 then return
 
-  $3 = "Buka Berkas: "
+  $3 = "Berkas untuk dimasukkan : "
   $4 = ""
   i = 6
   j = & $3
@@ -640,13 +640,13 @@ return
 
 writeout:
   if $2 = "" then goto writename
-  $3 = "Simpan berkas yang sudah ada? "
+  $3 = "Simpan ke berkas yang ada? "
   gosub question
   if v = 0 then goto save_current
   if v = 2 then goto cancelled
 
 writename:
-  $3 = "Simpan Nama Berkas: "
+  $3 = "Nama berkas untuk disimpan: "
   gosub prompt
   if $4 = "" then goto cancelled
   $2 = $4
@@ -658,8 +658,8 @@ save_current:
   save $2 g v
   if r > 0 then goto saveerror
 
-  if m = 1 then $3 = "Tulis 1 baris"
-  if m > 1 then $3 = "Tulis " + m + " baris"
+  if m = 1 then $3 = "Tertulis 1 baris"
+  if m > 1 then $3 = "Tertulis " + m + " baris"
   gosub set_caption
 
   case upper $2
@@ -722,7 +722,7 @@ search:
 return
 
 goline:
-  $3 = "Nomor Baris: "
+  $3 = "Nomor baris: "
   gosub prompt
   if $4 = "" then return
 
