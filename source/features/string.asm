@@ -768,10 +768,11 @@ os_get_time_string:
 	mov al, ch
 	call .add_digit
 
+
+.minutes:
 	mov al, ':'			; Time separator (12-hr format)
 	stosb
 
-.minutes:
 	mov al, cl			; Minute
 	shr al, 4			; Tens digit - move higher BCD number into lower bits
 	and cl, 0Fh			; Ones digit
@@ -808,7 +809,7 @@ os_get_time_string:
 	ret
 
 
-	.hours_string	db 'hours', 0
+	.hours_string	db ' ', 0
 	.am_string 	db 'AM', 0
 	.pm_string 	db 'PM', 0
 
@@ -901,7 +902,7 @@ os_get_date_string:
 	jne .fmt1_month
 
 	call .add_month			; Yes, add to string
-	mov ax, ', '
+	mov ax, '  '
 	stosw
 	jmp short .fmt1_century
 

@@ -740,13 +740,13 @@ apmverserr:
 	help_text1			db '  - LS             Menampilkan berkas pada direktori', 13, 10, 0
 	help_text2			db '  - SALIN          Menyalin berkas', 13, 10, 0
 	help_text3			db '  - MV             Mengubah nama berkas atau direktori', 13, 10, 0
-	help_text4			db '  - HAPUS          Menghapus berkas', 13, 10, 0
+	help_text4			db '  - HPS            Menghapus berkas', 13, 10, 0
 	help_text5			db '  - CAT            Menampilkan teks di berkas', 13, 10, 0
 	help_text6			db '  - UKURAN         Menampilkan ukuran berkas', 13, 10, 0
 	help_text7			db '  - BERSIH         Menghapus layar monitor', 13, 10, 0
-	help_text8			db '  - WAKTU          Memeriksa waktu sistem', 13, 10, 0
-	help_text9			db '  - TANGGAL        Memeriksa tanggal sistem', 13, 10, 0
-	help_text10			db '  - VERSI          Memeriksa versi kernel ', OS_NAME_SHORT, 13, 10, 0
+	help_text8			db '  - JAM            Memeriksa waktu sistem', 13, 10, 0
+	help_text9			db '  - TGL            Memeriksa tanggal sistem', 13, 10, 0
+	help_text10			db '  - VER            Memeriksa versi kernel ', OS_NAME_SHORT, 13, 10, 0
 	help_text11			db '  - KELUAR         Keluar dari sesi command line', 13, 10, 0
 	help_text12			db '  - REBOOT         Mulai ulang sesi komputer', 13, 10, 0
 	help_text13			db '  - MATIKAN        Matikan sesi komputer', 13, 10, 0
@@ -765,11 +765,11 @@ apmverserr:
 	help_string				db 'BANTUAN', 0
 	cls_string				db 'BERSIH', 0
 	dir_string				db 'LS', 0
-	time_string				db 'WAKTU', 0
-	date_string				db 'TANGGAL', 0
-	ver_string				db 'VERSI', 0
+	time_string				db 'JAM', 0
+	date_string				db 'TGL', 0
+	ver_string				db 'VER', 0
 	cat_string				db 'CAT', 0
-	del_string				db 'HAPUS', 0
+	del_string				db 'HPS', 0
 	ren_string				db 'MV', 0
 	copy_string				db 'SALIN', 0
 	size_string				db 'UKURAN', 0
