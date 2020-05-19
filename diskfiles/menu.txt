@@ -11,12 +11,12 @@ Editor Gambar
 Editor Suara
 Forth
 Shell BASIC
-Shell Peintah baris
+Shell Perintah Baris
 Hiburan >
 Utilitas >
 Semua Program >
 
-Mulai Ulang
+Muat Ulang
 Matikan
 }
 
@@ -43,7 +43,7 @@ Matikan
 128
 128
 133
-128
+131
 131
 131
 129
@@ -65,7 +65,7 @@ Hangman
 Keyboard
 Muncher
 Cosmic Flight
-TechTron
+TechTron Reloaded
 Sudoku
 }
 
@@ -75,7 +75,7 @@ Sudoku
 *KEYBOARD.BIN
 *MUNCHER.BAS
 *CF.BAS
-*TECHTRON.BAS
+*MIKETRON.BAS
 *SUDOKU.BAS
 }
 
@@ -96,10 +96,10 @@ Menu Utilitas
 
 {L2
 Kalkulator
-System Monitor
-Setel Kata sandi
+Monitor Sistem
+Setel Kata Sandi
 Editor Memori
-Mouse API Test
+Ujicoba Mouse API
 }
 
 {A2
