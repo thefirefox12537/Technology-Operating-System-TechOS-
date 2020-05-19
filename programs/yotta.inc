@@ -239,7 +239,7 @@ exit_okay:
 
 unsaved:
   if p = 0 then return
-  $3 = "Simpan buffer termodifikasi (Tkn 'T' akan mnghncurkn prubahan) ? "
+  $3 = "Simpn buffer trmodifksi (Tkn 'T' mnghncurkn prubahan) ? "
   gosub question
   w = v
   if w = 0 then gosub save_current

@@ -347,7 +347,7 @@ set_filename:
 		call os_print_string
 		ret
 		
-	no_file_word			db	'Buffer Bru', 0
+	no_file_word			db	'Buffer Baru', 0
 	file_word			db	'Brks: ', 0		
 
 set_caption:

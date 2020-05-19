@@ -1,7 +1,7 @@
 rem TechTron Game (TECHTRON.BAS)
 rem A expanded demo game
 rem Created by Mike Saunders
-rem Extended by Faizal Hamzah
+rem Extended by Joshua Beck
 rem Version 1.1.1
 rem Send any bug reports or suggested features to:
 rem mikeosdeveloper@gmail.com
