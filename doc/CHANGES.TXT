@@ -1,11 +1,23 @@
 =============================================================================
 TechOS - A small 16-bit x86 operating system.
 Copyright (C) 2016 TechOS Developers, uses GPL licence see doc/LICENCE.TXT
-Copyright (C) 2016 The Firefox Foundation.  All rights reserved.
+Copyright (C) 2016 - 2020 The Firefox Foundation.  All rights reserved.
 
 Copyright (C) 2013 TachyonOS Developers -- see doc/TachyonOS/LICENCE.TXT
 Copyright (C) 2006 - 2012 MikeOS Developers -- see doc/MikeOS/LICENSE.TXT
 =============================================================================
+
+------------------------
+Version 0.12 (19 Mei 2020)
+------------------------
+* The DIR command now prints files in a four column list.
+* os_input_string now supports a length limit.
+* os_input_dialog is now limited to 50 character that will fit in the box.
+* Fixed the INPUT command in BASIC causing buffer overflows in strings.
+* The INPUT command in BASIC now limits the number of character for integers.
+* Fixed bugs in os_file_selector and os_list_dialog.
+* os_dialog_box rewritten to prevent text overflows and clean up code.
+* Fixed TUI bugs.
 
 ------------------------
 Version 0.11 (20 December 2016)

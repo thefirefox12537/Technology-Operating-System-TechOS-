@@ -18,10 +18,11 @@ ARCHIVE		Creates file archives			1:cmd 2:archive-file [3:filelist]	Mega Archiver
 ASM		Assembler				1:input-file 2:output-file		Asm4mo
 BANTUAN		Displays a list of avaliable commands	(none)					Built-in
 BASIC		Interactive BASIC Interpreter		[1:command]				Interactive Interpreter
+BERSIH		Clears the screen			(none)					Built-in
 BFM		DOS-like file manager			(none)					BlackSVK File Manager
 CALC		Menu-based Calculator			(none)					Calculator
+CAT		Concatenates a file			1:filename				Built-in
 CF		Space Flight Game			(none)					Cosmic Flight
-DIREKTORI	Lists files on the disk			(none)					Built-in
 DISPLAY		Displays AAP picture files		1:filename				ASCII Artist
 DRAW		An advanced text artwork program	[1:filename]				ASCII Artist
 ENCRYPT		File encryption program			(none)					Commandline Tools
@@ -35,12 +36,12 @@ HEAD		Display the start of a file		1:filename [2:lines]			Command line Utilities
 ITC		Plain text compression program		1:command 2:in-file [3:out-file]	Text Compression
 KELUAR		Exits the commandline shell		(none)					Built-in
 KEYBOARD	Simple keyboard game playing piano	(none)					TechOS Keyboard
-LAYAR		Clears the screen			(none)					Built-in
-LIHAT		Concatenates a file			1:filename				Built-in
+LS		Lists files on the disk			(none)					Built-in
 MATIKAN		Shuting down the system with CLI	(none)					Built-in
 MEMEDIT		2-column TUI Memory Editor		[1:filename]				Memory Manipulator
 MONITOR		System monitor				(none)					TechOS Utilities
 MUNCHER		Pathfinding game			(none)					Muncher
+MV		Changes the name of a file		1:old-filename 2:new-filename		Built-in
 NEWPASS		Changes the startup password		(none)					Password Protection
 PATTERN		Pattern generator			(none)					Visualiser
 PLAY		Plays a tune edit (SND) file		1:filename				Tune Editor
@@ -52,7 +53,6 @@ TAIL		Displays the end of files		1:filename [2:lines]			Command line Utilities
 TANGGAL		Displays the current data		(none)					Built-in
 TECHTRON	Worm-like game				(none)					TechTron
 TUNEEDIT	PC speaker sound making tool		[1:filename]				Tune Editor
-UBAH		Changes the name of a file		1:old-filename 2:new-filename		Built-in
 UKURAN		Finds the size of a file		1:filename				Built-in
 VERSI		Displays the OS version			(none)					Built-in
 VIEWER		Displays the sample PCX, BAS, TXT file	(none)					TechOS File Viewer
