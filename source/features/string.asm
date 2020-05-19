@@ -202,47 +202,6 @@ os_string_lowercase:
 	popa
 	ret
 
-; ------------------------------------------------------------------
-; os_string_reversecase -- Convert zero-terminated string to reverse case
-; IN/OUT: AX = string location
-
-os_string_reversecase:
-	pusha
-
-	mov si, ax			; Use SI to access string
-
-.more:
-	cmp byte [si], 0		; Zero-termination of string?
-	je .done			; If so, quit
-
-.ucase:
-	cmp byte [si], 'A'		; In the upper case A to Z range?
-	jb .noatoz
-	cmp byte [si], 'Z'
-	ja .lcase
-	
-	add byte [si], 20h		; If so, convert input char to lower case
-	jmp .next
-	
-.lcase:
-	cmp byte [si], 'a'		; In the upper case A to Z range?
-	jb .noatoz
-	cmp byte [si], 'z'
-	ja .noatoz
-	
-	sub byte [si], 20h		; If so, convert input char to lower case
-
-.next:
-	inc si
-	jmp .more
-
-.noatoz:
-	inc si
-	jmp .more
-
-.done:
-	popa
-	ret
 
 ; ------------------------------------------------------------------
 ; os_string_copy -- Copy one string into another
@@ -942,7 +901,7 @@ os_get_date_string:
 	jne .fmt1_month
 
 	call .add_month			; Yes, add to string
-	mov ax, '  '
+	mov ax, ', '
 	stosw
 	jmp short .fmt1_century
 
@@ -987,7 +946,7 @@ os_get_date_string:
 	cmp bh, 0			; ASCII?
 	jne .fmt0_day2
 
-	mov al, ' '			; Yes, separator = comma space
+	mov al, ','			; Yes, separator = comma space
 	stosb
 	mov al, ' '
 
@@ -1094,16 +1053,4 @@ os_string_tokenize:
 
 
 ; ==================================================================
-
-; ------------------------------------------------------------------
-; os_memory_copy -- Copy data from memory pointed by BX to memory pointed by AX. Data count is CX
-; IN: AX = data destination, BX = data source, CX = count
-os_memory_copy:
-   pusha
-   mov di, ax
-   mov si, bx
-   cld
-   rep movsb
-   popa
-   ret
 

@@ -5,7 +5,7 @@
 ; Copyright (C) 2013 TachyonOS Developers -- see doc/TachyonOS/LICENCE.TXT
 ; Copyright (C) 2016 TechOS Developers -- see doc/LICENSE.TXT
 ;
-; Copyright (C) 2016 The Firefox Foundation.  All rights reserved.
+; Copyright (C) 2020 The Firefox Foundation.  All rights reserved.
 ;
 ; MISCELLANEOUS ROUTINES
 ; ==================================================================

@@ -40,6 +40,7 @@ get_cmd:				; Main processing loop
 	call os_print_string
 
 	mov ax, input			; Get command string from user
+	mov bx, 256
 	call os_input_string
 
 	call os_print_newline
@@ -358,28 +359,50 @@ list_directory:
 	call os_get_file_list
 
 	mov si, dirlist
-	mov ah, 0Eh			; BIOS teletype function
 
-.repeat:
-	lodsb				; Start printing filenames
-	cmp al, 0			; Quit if end of string
+.set_column:
+	; Put the cursor in the correct column.
+	call os_get_cursor_pos
+
+	mov ax, cx
+	and al, 0x03
+	mov bl, 20
+	mul bl
+	
+	mov dl, al
+	call os_move_cursor
+
+	mov ah, 0Eh			; BIOS teletype function
+.next_char:
+	lodsb
+
+	cmp al, ','
+	je .next_filename
+
+	cmp al, 0
 	je .done
 
-	cmp al, ','			; If comma in list string, don't print it
-	jne .nonewline
-	pusha
-	call os_print_newline		; But print a newline instead
-	popa
-	jmp .repeat
-
-.nonewline:
 	int 10h
-	jmp .repeat
+	jmp .next_char
+
+.next_filename:
+	inc cx
+	
+	mov ax, cx
+	and ax, 03h
+
+	cmp ax, 0			; New line every 4th filename.
+	jne .set_column
+
+	call os_print_newline	
+	jmp .set_column
+
+	
 
 .done:
+	call os_print_newline
 	mov si, separate_msg
 	call os_print_string
-	call os_print_newline
 	jmp get_cmd
 
 
@@ -642,7 +665,6 @@ exit:
 
 
 ; ------------------------------------------------------------------
-
 reboot_cli:
 	mov        al, 0feh 
 	out        64h, al
@@ -708,50 +730,49 @@ apmverserr:
 	bin_extension		db '.BIN', 0
 	bas_extension		db '.BAS', 0
 
-	prompt			db 'Shell:# ', 0
+	prompt				db 'Shell:# ', 0
 
 	help_textfirst		db 'Ketik BANTUAN untuk melihat perintah ', OS_NAME_SHORT, ' Command Line', 13, 10, 0
 
 	separate_msg		db ' ', 13, 10, 0
 	
-	help_text		db 'Perintah:', 13, 10, 0
-	help_text1		db '  - DIREKTORI      Menampilkan berkas pada direktori', 13, 10, 0
-	help_text2		db '  - SALIN          Menyalin berkas', 13, 10, 0
-	help_text3		db '  - UBAH           Mengubah nama berkas atau direktori', 13, 10, 0
-	help_text4		db '  - HAPUS          Menghapus berkas', 13, 10, 0
-	help_text5		db '  - LIHAT          Menampilkan teks di berkas', 13, 10, 0
-	help_text6		db '  - UKURAN         Menampilkan ukuran berkas', 13, 10, 0
-	help_text7		db '  - LAYAR          Menghapus layar monitor', 13, 10, 0
-	help_text8		db '  - WAKTU          Memeriksa waktu sistem', 13, 10, 0
-	help_text9		db '  - TANGGAL        Memeriksa tanggal sistem', 13, 10, 0
-	help_text10		db '  - VERSI          Memeriksa versi kernel ', OS_NAME_SHORT, 13, 10, 0
-	help_text11		db '  - KELUAR         Keluar dari sesi command line', 13, 10, 0
-	help_text12		db '  - REBOOT         Mulai ulang sesi komputer', 13, 10, 0
-	help_text13		db '  - MATIKAN        Matikan sesi komputer', 13, 10, 0
-	
-	invalid_msg		db 'Perintah atau program tidak mungkin', 13, 10, 0
-	nofilename_msg		db 'Tidak ada nama berkas atau nama berkas tidak cukup', 13, 10, 0
+	help_text			db 'Perintah:', 13, 10, 0
+	help_text1			db '  - LS             Menampilkan berkas pada direktori', 13, 10, 0
+	help_text2			db '  - SALIN          Menyalin berkas', 13, 10, 0
+	help_text3			db '  - MV             Mengubah nama berkas atau direktori', 13, 10, 0
+	help_text4			db '  - HAPUS          Menghapus berkas', 13, 10, 0
+	help_text5			db '  - CAT            Menampilkan teks di berkas', 13, 10, 0
+	help_text6			db '  - UKURAN         Menampilkan ukuran berkas', 13, 10, 0
+	help_text7			db '  - BERSIH         Menghapus layar monitor', 13, 10, 0
+	help_text8			db '  - WAKTU          Memeriksa waktu sistem', 13, 10, 0
+	help_text9			db '  - TANGGAL        Memeriksa tanggal sistem', 13, 10, 0
+	help_text10			db '  - VERSI          Memeriksa versi kernel ', OS_NAME_SHORT, 13, 10, 0
+	help_text11			db '  - KELUAR         Keluar dari sesi command line', 13, 10, 0
+	help_text12			db '  - REBOOT         Mulai ulang sesi komputer', 13, 10, 0
+	help_text13			db '  - MATIKAN        Matikan sesi komputer', 13, 10, 0
+	invalid_msg			db 'Tidak ada perintah atau program seperti itu', 13, 10, 0
+	nofilename_msg		db 'Nama berkas tidak ada atau tidak cukup', 13, 10, 0
 	notfound_msg		db 'Berkas tidak ditemukan', 13, 10, 0
-	writefail_msg		db 'Tidak dapat menulis berkas. Tulis telah dilindungi atau nama berkas tidak sah?', 13, 10, 0
-	exists_msg		db 'Tujuan berkas sudah ada!', 13, 10, 0
+	writefail_msg		db 'Tidak dapat menulis berkas. Tulis telah dilindungi lindungi atau tidak sah?', 13, 10, 0
+	exists_msg			db 'Tujuan berkas sudah ada!', 13, 10, 0
 	rebooterr_msg		db 'Tidak dapat memulai ulang. Gagal menghubungkan ke APM', 13, 10, 0
-	connectapmerr_msg		db 'Tidak dapat mematikan. Gagal menghubungkan ke APM', 13, 10, 0
+	connectapmerr_msg	db 'Tidak dapat mematikan. Gagal menghubungkan ke APM', 13, 10, 0
 	apmverserr_msg		db 'Tidak dapat mematikan. Memperlukan APM v1.2', 13,10, 0
-	version_msg		db OS_NAME_SHORT, ' Command Line(R) Versi ', OS_VERSION_STRING, 13, 10, 0
-	copyright_msg		db 'Hak Cipta(C) 2016 The Firefox Foundation.  Semua hak terpelihara.', 13, 10, 0
+	version_msg			db OS_NAME_SHORT, ' Command Line(R) Versi ', OS_VERSION_STRING, 13, 10, 0
+	copyright_msg		db 'Hak Cipta(C) 2020 The Firefox Foundation.  Semua hak terpelihara.', 13, 10, 0
 
-	exit_string		db 'KELUAR', 0
-	help_string		db 'BANTUAN', 0
-	cls_string		db 'LAYAR', 0
-	dir_string		db 'DIREKTORI', 0
-	time_string		db 'WAKTU', 0
-	date_string		db 'TANGGAL', 0
-	ver_string		db 'VERSI', 0
-	cat_string		db 'LIHAT', 0
-	del_string		db 'HAPUS', 0
-	ren_string		db 'UBAH', 0
-	copy_string		db 'SALIN', 0
-	size_string		db 'UKURAN', 0
+	exit_string				db 'KELUAR', 0
+	help_string				db 'BANTUAN', 0
+	cls_string				db 'BERSIH', 0
+	dir_string				db 'LS', 0
+	time_string				db 'WAKTU', 0
+	date_string				db 'TANGGAL', 0
+	ver_string				db 'VERSI', 0
+	cat_string				db 'CAT', 0
+	del_string				db 'HAPUS', 0
+	ren_string				db 'MV', 0
+	copy_string				db 'SALIN', 0
+	size_string				db 'UKURAN', 0
 	shutdown_cli_string		db 'MATIKAN',0
 	reboot_cli_string		db 'REBOOT',0
 

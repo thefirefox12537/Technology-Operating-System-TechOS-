@@ -124,7 +124,6 @@ do_action:
 	
 
 app_selector:
-	mov cx, 10011111b		; Colour: white text on light blue
 	call draw_background
 
 	call os_file_selector		; Get user to select a file, and store
@@ -134,41 +133,6 @@ app_selector:
 	jc load_menu			; Return to the CLI/menu choice screen if Esc pressed
 
 	mov word [file_tmp], ax		; Save the filename for now
-	
-	mov si, ax			; Did the user try to run 'KERNEL.BIN'?
-	mov di, kern_file_name
-	call os_string_compare
-	jc no_kernel_execute		; Show an error message if so
-
-
-	; Next, we need to check that the program we're attempting to run is
-	; valid -- in other words, that it has a .BIN extension
-
-	push si				; Save filename temporarily
-
-	mov bx, si
-	mov ax, si
-	call os_string_length
-
-	mov si, bx
-	add si, ax			; SI now points to end of filename...
-
-	dec si
-	dec si
-	dec si				; ...and now to start of extension!
-
-	mov di, bin_ext
-	mov cx, 3
-	rep cmpsb			; Are final 3 chars 'BIN'?
-	jne not_bin_extension		; If not, it might be a '.BAS'
-
-	pop si				; Restore filename
-
-
-	mov ax, si
-	mov cx, 32768			; Where to load the program file
-	call os_load_file		; Load filename pointed to by AX
-
 
 file_options:
 	mov bl, [FS:CFG_DLG_OUTER_COLOUR]
@@ -755,14 +719,14 @@ shell_data:
 	fileoptions_msg2	db 'atau tekan ESC untuk kembali', 0
 	modifyfile_msg		db 'Opsi berkas untuk: ', 0
 	
-	delsure_msg		db 'Anda yakin ingin menghapus berkas:', 0
+	delsure_msg			db 'Anda yakin ingin menghapus berkas:', 0
 	filename_string		db 'Masukkan nama berkas 8.3 baru', 0
-	size_msg		db 'Ukuran berkas (dalam bytes):', 0
+	size_msg			db 'Ukuran berkas (dalam bytes):', 0
 	
-	general_msg		db 'Tidak dapat mengubah berkas:', 0
+	general_msg			db 'Tidak dapat mengubah berkas:', 0
 	writeonly_msg		db '(Media hanya-tulis?)', 0
-	big_err			db 'Berkas terlalu besar kedalam RAM', 0
-	exists_err		db 'Berkas sudah ada', 0
+	big_err				db 'Berkas terlalu besar kedalam RAM', 0
+	exists_err			db 'Berkas sudah ada', 0
 	
 	connecterr_msg		db 'Gagal menghubungkan ke APM', 0
 	apmvererr_msg		db 'Memperlukan APM v1.2', 0
@@ -770,11 +734,11 @@ shell_data:
 	restart_string		db 'Anda yakin ingin memulai ulang?', 0
 	shutdown_string		db 'Anda yakin ingin mematikan?', 0
 
-	bin_ext			db 'BIN'
-	bas_ext			db 'BAS'
+	bin_ext				db 'BIN'
+	bas_ext				db 'BAS'
 
 	kerndlg_string_1	db 'Tidak dapat memuat dan mengeksekusi', 0
-	kerndlg_string_2	db 'kernel!. ', OS_KERNEL_FILENAME, ' adalah inti dari', 0
+	kerndlg_string_2	db 'kernel!', OS_KERNEL_FILENAME, ' adalah inti dari', 0
 	kerndlg_string_3	db OS_NAME_SHORT, ' dan bukan program sejati.', 0
 
 	ext_string_1		db 'Ekstensi nama berkas tak sah! Anda hanya', 0
@@ -791,10 +755,10 @@ shell_data:
 	blank_string		db 0
 	
 	menu_data_handle	db 0
-	menu_number		db 0
-	menu_title		times 40 db 0
+	menu_number			db 0
+	menu_title			times 40 db 0
 	menu_escape_action	times 20 db 0
-	menu_list		times 256 db 0
+	menu_list			times 256 db 0
 	menu_actions		times 128 db 0
-	icon_buffer		times 5 db 0
+	icon_buffer			times 5 db 0
 	

@@ -2493,6 +2493,7 @@ do_input:
 
 .number_var:
 	mov ax, string_buffer			; Get input from the user
+	mov bx, 6
 	call os_input_string
 
 	mov ax, string_buffer
@@ -2521,6 +2522,7 @@ do_input:
 	push bx
 
 	mov ax, string_buffer
+	mov bx, 128
 	call os_input_string
 
 	mov si, string_buffer
@@ -5665,19 +5667,19 @@ textmode_finish:
 	err_goto_notlabel	db "Kesalahan: GOTO atau GOSUB tidak diikuti oleh label", 0
 	err_graphics		db "Kesalahan: Perintah memperlukan modus grafik", 0
 	err_label_notfound	db "Kesalahan: label tidak ditemukan", 0
-	err_memory		db "Kesalahan: diluar memori", 0
+	err_memory			db "Kesalahan: diluar memori", 0
 	err_nest_limit		db "Kesalahan: FOR atau GOSUB sarang melebihi batas", 0
-	err_next		db "Kesalahan: NEXT tanpa FOR", 0
+	err_next			db "Kesalahan: NEXT tanpa FOR", 0
 	err_no_endif		db "Kesalahan: BLOCKIF tanpa menemukan ENDIF", 0
-	err_loop		db "Kesalahan: LOOP tanpa DO", 0
+	err_loop			db "Kesalahan: LOOP tanpa DO", 0
 	err_print_type		db "Kesalahan: PRINT tidak diikuti oleh kutip teks atau variabel", 0
 	err_polygon_min		db "Kesalahan: polygon harus memiliki paling sedikit tiga titik", 0
 	err_polygon_max		db "Kesalahan: polygon tidak dapat memiliki lebih dari sepuluh titik", 0
 	err_quote_term		db "Kesalahan: string kutip atau char tidak diakhiri dengan benar", 0
-	err_return		db "Kesalahan: RETURN tanpa GOSUB", 0
+	err_return			db "Kesalahan: RETURN tanpa GOSUB", 0
 	err_string_range	db "Kesalahan: lokasi string diluar jarak", 0
-	err_syntax		db "Kesalahan: sintaks tidak sah", 0
-	err_break		db "BREAK DIPANGGIL", 0
+	err_syntax			db "Kesalahan: sintaks tidak sah", 0
+	err_break			db "BREAK DIPANGGIL", 0
 
 	line_num_starter	db " - baris ", 0
 
