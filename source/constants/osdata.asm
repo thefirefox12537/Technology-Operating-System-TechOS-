@@ -2,8 +2,8 @@
 ; Version numbers and names
 %DEFINE OS_NAME_SHORT			'TechOS'
 %DEFINE OS_NAME_LONG			'Technology Operating System'
-%DEFINE OS_VERSION_NUMBER		11
-%DEFINE OS_VERSION_STRING		'0.11'
+%DEFINE OS_VERSION_NUMBER		12
+%DEFINE OS_VERSION_STRING		'0.12'
 
 ; Filenames to search for
 %DEFINE OS_KERNEL_FILENAME		'KERNEL.BIN'
@@ -19,4 +19,4 @@
 %DEFINE OS_TUI_BOTTOM			'Versi ', OS_VERSION_STRING
 
 ; Time to wait, before entering the starting the shell (to view messages)
-%define BOOT_DELAY 50
+%define BOOT_DELAY 10

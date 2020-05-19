@@ -67,6 +67,6 @@
 	boot_data_block:
 		.ok_msg					db "SUKSES "
 		.fail_msg				db "GAGAL "
-		.fatal_msg				db "Proses boot dihentikan dengan kesalahan: ", 0
+		.fatal_msg				db "Proses boot terhenti karena kesalahan: ", 0
 %endmacro
  
