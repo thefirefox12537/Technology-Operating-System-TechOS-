@@ -1,5 +1,5 @@
 @echo off
-cd emulator
-bochs -q -f bochsrc.bxrc
+echo Starting using Bochs . . . .
+call .\emulator\bochs -q -f .\emulator\bochsrc.bxrc
 if exist log.txt del /q log.txt
-cd ..
+if exist emulator\log.txt del /q emulator\log.txt

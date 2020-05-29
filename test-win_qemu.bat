@@ -1,4 +1,3 @@
 @echo off
-cd emulator
-qemu -fda ..\disk_images\techos.ima -m 10 -soundhw pcspk
-cd ..
+echo Starting using QEMU . . . .
+call .\emulator\qemu.exe -fda ..\disk_images\techos.flp -m 10 -soundhw pcspk
